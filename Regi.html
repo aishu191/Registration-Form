@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+    .container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    input[type="text"],
+    input[type="password"],
+    select {
+      width: 100%;
+      margin: 5px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      width: 100%;
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Registration Form</h2>
+  <form id="registrationForm">
+    <input type="email" id="email" name="email" placeholder="Email" required>
+    <input type="password" id="password" name="password" placeholder="Password" required>
+    <input type="text" id="address" name="address" placeholder="Address" required>
+    <select id="graduation" name="graduation" required>
+      <option value="" disabled selected>Select Graduation</option>
+      <option value="entc">ENTC</option>
+      <option value="mech">Mechanical</option>
+      <option value="civil">Civil</option>
+      <option value="cs">Computer Science</option>
+      <option value="it">Information Technology</option>
+    </select>
+    <input type="number" id="yop" name="yop" placeholder="Year of Passing" required>
+    <input type="submit" value="Register">
+  </form>
+</div>
+
+<script>
+  document.getElementById('registrationForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+    var address = document.getElementById('address').value;
+    var graduation = document.getElementById('graduation').value;
+    var yop = document.getElementById('yop').value;
+
+    // Perform any additional validation here if needed
+
+    // You can store the data or send it to a server
+    console.log("Email: " + email);
+    console.log("Password: " + password);
+    console.log("Address: " + address);
+    console.log("Graduation: " + graduation);
+    console.log("Year of Passing: " + yop);
+
+    // Clear the form after submission if needed
+    // document.getElementById('registrationForm').reset();
+  });
+</script>
+
+</body>
+</html>
